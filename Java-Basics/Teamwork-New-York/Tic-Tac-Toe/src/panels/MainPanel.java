@@ -15,7 +15,7 @@ public class MainPanel extends JPanel{
 	public MainPanel(Player one, Player two){
 		gridPanel = new GridPanel();
 		setStatsPanel(new StatsPanel(one, two));
-		setLayout(new GridLayout(1, 2, 3, 3));
+		setLayout(new GridLayout(1, 2, 10, 10));
 		add(gridPanel);
 		add(getStatsPanel());
 		setBackground(Color.black);

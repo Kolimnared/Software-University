@@ -12,8 +12,8 @@ public class GridPanel extends JPanel {
 	
 	public GridPanel(){
 	//	super();
-		setLayout(new GridLayout(3, 3, 2, 2));
-		setBackground(Color.gray);
+		setLayout(new GridLayout(3, 3, 12, 12));
+		setBackground(Color.black);
 		for (int i = 0; i < 9; i++) {
 			buttons[i/3][i%3] = new XOButton();
 			add(buttons[i/3][i%3]);

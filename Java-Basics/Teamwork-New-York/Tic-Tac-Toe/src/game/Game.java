@@ -10,20 +10,22 @@ public class Game extends JFrame{
 	public static MainPanel mainPanel;
 	public static Player playerOne;
 	public static Player playerTwo;
+	public static String playerOneName;
+	public static String playerTwoName;
 	
 	public static void main(String[] args) {
-		new Game();
+		new LoadingScreen();
 
 	}
 	
 	public Game(){
 		super("TicTacToe");
-		playerOne = new Player("Gosho", true);
-		playerTwo = new Player("Tosho", false);
+		playerOne = new Player(playerOneName, true);
+		playerTwo = new Player(playerTwoName, false);
 		mainPanel = new MainPanel(playerOne, playerTwo);
 		
 		add(mainPanel);
-		setSize(700, 350);
+		setSize(700, 360);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
@@ -51,4 +53,8 @@ public class Game extends JFrame{
 		playerTwo.setTurn(!playerTwo.isTurn());
 	}
 	
+	public static void getPlayerNames(String playerOneName, String platerTwoName){
+		Game.playerOneName = playerOneName;
+		Game.playerTwoName = platerTwoName;
+	}
 }

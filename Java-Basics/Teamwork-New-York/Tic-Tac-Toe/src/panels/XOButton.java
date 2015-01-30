@@ -1,6 +1,7 @@
 package panels;
 import game.Game;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +29,7 @@ public class XOButton extends JButton implements ActionListener{
 		this.o = new ImageIcon(this.getClass().getResource("/graphics/buttons/OIcon.jpg"));
 		this.oWinner = new ImageIcon(this.getClass().getResource("/graphics/buttons/OIconWin.jpg"));
 		this.emptyCell = new ImageIcon(this.getClass().getResource("/graphics/buttons/EmptyIcon.jpg"));
+		setBackground(Color.white);
 		this.setValue(0);
 		this.setIcon(emptyCell);
 		this.addActionListener(this);
