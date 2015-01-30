@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -70,6 +71,13 @@ public class LoadingScreen extends JFrame {
 					public void actionPerformed(ActionEvent arg0) {
 						String playerOneStr = playerOne.getText();
 						String playerTwoStr = playerTwo.getText();
+						if(playerOneStr.equals("") || playerTwoStr.equals("")){
+							JOptionPane.showMessageDialog(new JFrame(), "Enter Player\'s names!!!");
+							return;
+						}else if(playerOneStr.equals(playerTwoStr)){
+							JOptionPane.showMessageDialog(new JFrame(), "Enter diferent names!!!");
+							return;
+						}
 						Game.getPlayerNames(playerOneStr, playerTwoStr);
 						dispose();
 						new Game();
